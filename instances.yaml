@@ -1,0 +1,24 @@
+environment:
+  #base_box: "rockylinux/8"
+  #base_box_version: "5.0"
+  base_box: "martyV/rockylinux8"
+  base_box_version: "0.1.13"
+
+rke2:
+  rke2_cluster_ip: "10.10.10.11"
+  rke2_cluster_fqdn: "10.10.10.11"
+
+boxes:
+- name: "rke2-node1"
+  role: "control-plane"
+  cluster_ip: "10.10.10.11"
+  hostonly_ip: "192.168.56.11"
+  mem: "4096"
+  cpu: "2"
+
+- name: "rke2-node2"
+  role: "worker"
+  cluster_ip: "10.10.10.12"
+  hostonly_ip: "192.168.56.12"
+  mem: "4096"
+  cpu: "2"
